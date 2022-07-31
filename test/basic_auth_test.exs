@@ -1,4 +1,4 @@
-defmodule HomeworkTest do
+defmodule AuthTest do
   # Import helpers
   use Hound.Helpers
   use ExUnit.Case
