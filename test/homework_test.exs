@@ -15,7 +15,6 @@ defmodule HomeworkTest do
     # This could also be done by assigning and referencing variables.
     navigate_to "https://admin:admin@the-internet.herokuapp.com/basic_auth"
     # =~ matches the term on the left against the string on the right.
-    assert current_url() =~ "basic_auth"
-    #TODO: Fix assertion. This isn't ideal, but it's a start while I figure out the new tech stack
+    assert visible_page_text() =~ "Congratulations!"
   end
 end
