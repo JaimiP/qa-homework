@@ -21,7 +21,17 @@ defmodule FormAuthTest do
     # Could also be verified with URL change, presence of logout button, or successful API response.
   end
 
-  test "" do
-
+  test "incorrect password login test" do
+    navigate_to "https://the-internet.herokuapp.com/login"
+    # Locate correct field and enter correct username.
+    click(find_element(:id, "username"))
+    send_text("tomsmith")
+    # Locate correct field and enter correct password.
+    click(find_element(:id, "password"))
+    send_text("AWrongPassword123")
+    # Submit form.
+    submit_element({:css, "[type='submit']"})
+    # Check for invalid password alert presence. Deliberately choosing a different verification method than the successful test.
+    assert visible_page_text() =~ "password is invalid"
   end
 end
