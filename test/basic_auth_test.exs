@@ -8,7 +8,6 @@ defmodule AuthTest do
 
   test "basic auth test" do
     # Pass in authentication info in URL.
-    # This could also be done by assigning and referencing variables.
     navigate_to "https://admin:admin@the-internet.herokuapp.com/basic_auth"
     # =~ matches the term on the left against the string on the right.
     assert visible_page_text() =~ "Congratulations!"
@@ -16,11 +15,8 @@ defmodule AuthTest do
 
   test "basic auth invalid credentials test" do
     # Pass in authentication info in URL.
-    # This could also be done by assigning and referencing variables.
     navigate_to "https://ADMIN:pass@the-internet.herokuapp.com/basic_auth"
     # =~ matches the term on the left against the string on the right.
-    # refute expects the expression to be false or nil.
     refute visible_page_text() =~ "Congratulations!"
-    #TODO: Figure out how to check for the 401 unauthorized error instead of just using refute.
   end
 end
