@@ -33,7 +33,7 @@ defmodule ScreenshotFailureTest do
     end
   end
 
-  test "" do
+  test "failing dropdown screenshot test" do
     try do
       navigate_to "https://the-internet.herokuapp.com/dropdown"
       # Check that dropdown is displayed.
